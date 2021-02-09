@@ -1,20 +1,34 @@
 import React, {useState, useEffect} from "react";
-import {
-  removeDay,
-  activateDay,
-} from "./../utils/customHooks";
-import './../styles/styles.scss'
+import {sendData} from "./../utils/axios";
+import {useHistory} from "react-router-dom";
 import DayFinal from "./AppointmentOverview";
-
+import "./isOn.scss";
 export default () => {
   const [saved, toSave] = useState(false);
+  const [updated, setUpdate] = useState(false);
+  const history = useHistory();
 
   const saveMyDates = () => {
     toSave((p) => !p);
   };
+  useEffect(() => {
+    const finalArr = [];
+    Object.keys(localStorage).forEach((el, i) => {
+      if (el.length === 1) {
+        console.log("item");
+        finalArr.push({
+          day: el,
+          arr: JSON.parse(localStorage.getItem(el)),
+        });
+      }
+    });
+
+    console.log(finalArr);
+  }, [saved]);
   return (
     <section className="day_main_save">
       <div className="day_wrapper_save">
+        {console.log(updated)}
         <DayFinal dayToCheck={"Monday"} toSave={saved} />
         <DayFinal dayToCheck={"Tuesday"} toSave={saved} />
         <DayFinal dayToCheck={"Wednesday"} toSave={saved} />

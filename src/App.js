@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 
 import {LoginMain} from "./Login/Login_main";
+import {ForgotPasswordMain} from "./Login/Login_forgot";
 import Overview from "./Appointment/isOn";
 
 function App() {
@@ -14,12 +15,17 @@ function App() {
       <Switch>
         <Route
           exact
-          path="/"
+          path="/company-login"
           render={(p) => <LoginMain />}
         />
         <Route
           exact
-          path="/calender"
+          path="/forgot-password"
+          render={(p) => <ForgotPasswordMain />}
+        />
+        <Route
+          exact
+          path="/calender-create"
           render={(p) => <Overview {...p} />}
         />
         <Route path="*" render={() => <div>ERROR</div>} />

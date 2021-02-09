@@ -1,8 +1,10 @@
+/* eslint-disable */
 import React from "react";
 import ReactDOM from "react-dom";
-// import './styles/styles.scss';
+import "./styles/styles.scss";
 import App from "./App";
 import "./App.scss";
+
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
