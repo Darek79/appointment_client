@@ -12,23 +12,39 @@ export default () => {
     toSave((p) => !p);
   };
   useEffect(() => {
-    const finalArr = [];
-    Object.keys(localStorage).forEach((el, i) => {
-      if (el.length === 1) {
-        console.log("item");
-        finalArr.push({
-          day: el,
-          arr: JSON.parse(localStorage.getItem(el)),
-        });
-      }
-    });
+    if (saved) {
+      const finalArr = [];
+      Object.keys(localStorage).forEach((el, i) => {
+        console.log(el[el.length - 1]);
+        if (el[el.length - 1] === "1") {
+          console.log("item");
+          finalArr.push({
+            day: el.substr(0, el.length - 1),
+            arr: JSON.parse(localStorage.getItem(el)),
+          });
+        }
+      });
 
-    console.log(finalArr);
+      sendData(
+        "PATCH",
+        "schedule/create",
+        {
+          email: history.location.state.email,
+          schedule: finalArr,
+        },
+        setUpdate
+      );
+      console.log(finalArr, "final");
+    }
   }, [saved]);
   return (
     <section className="day_main_save">
       <div className="day_wrapper_save">
-        {console.log(updated)}
+        {console.log(updated, "updated")}
+        {console.log(
+          history.location.state.email,
+          "history"
+        )}
         <DayFinal dayToCheck={"Monday"} toSave={saved} />
         <DayFinal dayToCheck={"Tuesday"} toSave={saved} />
         <DayFinal dayToCheck={"Wednesday"} toSave={saved} />

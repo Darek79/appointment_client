@@ -39,7 +39,7 @@ export default memo(({dayToCheck, toSave}) => {
   useEffect(() => {
     if (toSave) {
       localStorage.setItem(
-        dayToCheck[0],
+        dayToCheck + "1",
         JSON.stringify(dayM)
       );
     }
