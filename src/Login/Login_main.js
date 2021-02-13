@@ -117,7 +117,7 @@ export const LoginMain = () => {
       {login ? (
         <Redirect
           to={{
-            pathname: "/calender-create",
+            pathname: "/calendar-create",
             state: {email: "buzzer79@gmail.com"},
           }}
         />

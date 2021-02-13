@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {sendData} from "./../utils/axios";
-import {useHistory} from "react-router-dom";
+import {useHistory, NavLink} from "react-router-dom";
 import DayFinal from "./AppointmentOverview";
 import "./isOn.scss";
 export default () => {
@@ -15,9 +15,9 @@ export default () => {
     if (saved) {
       const finalArr = [];
       Object.keys(localStorage).forEach((el, i) => {
-        console.log(el[el.length - 1]);
+        // console.log(el[el.length - 1]);
         if (el[el.length - 1] === "1") {
-          console.log("item");
+          // console.log("item");
           finalArr.push({
             day: el.substr(0, el.length - 1),
             arr: JSON.parse(localStorage.getItem(el)),
@@ -34,7 +34,7 @@ export default () => {
         },
         setUpdate
       );
-      console.log(finalArr, "final");
+      // console.log(finalArr, "final");
     }
   }, [saved]);
   return (
@@ -53,7 +53,16 @@ export default () => {
         <DayFinal dayToCheck={"Saturday"} toSave={saved} />
       </div>
       <div className="day_submit_save">
-        <p onClick={saveMyDates}>save all days</p>
+        <p className="day_submit_btn" onClick={saveMyDates}>
+          save all days
+        </p>
+        <NavLink
+          to={{
+            pathname: "/calendar-company",
+            state: {email: history.location.state.email},
+          }}>
+          <p className="day_submit_btn">Calendar</p>
+        </NavLink>
       </div>
     </section>
   );

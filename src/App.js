@@ -7,6 +7,7 @@ import {
 
 import {LoginMain} from "./Login/Login_main";
 import {ForgotPasswordMain} from "./Login/Login_forgot";
+import {Calendar} from "./Calendar/Calendar";
 import Overview from "./Appointment/isOn";
 
 function App() {
@@ -25,8 +26,13 @@ function App() {
         />
         <Route
           exact
-          path="/calender-create"
+          path="/calendar-create"
           render={(p) => <Overview {...p} />}
+        />
+        <Route
+          exact
+          path="/calendar-company"
+          render={(p) => <Calendar {...p} />}
         />
         <Route path="*" render={() => <div>ERROR</div>} />
       </Switch>
