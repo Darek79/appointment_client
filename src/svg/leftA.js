@@ -1,5 +1,5 @@
 import React from "react";
-
+import moment from "moment";
 export const LeftA = ({
   clSvg,
   clSvgD,
@@ -13,7 +13,12 @@ export const LeftA = ({
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     className={clSvg}
-    onClick={state <= 4 ? undefined : fn}>
+    onClick={
+      state.length > 0 &&
+      state[0].date() === moment().date()
+        ? null
+        : fn
+    }>
     <path
       className={clPath}
       d="M15.293 20.707L6.586 12l8.707-8.707 1.414 1.414L9.414 12l7.293 7.293z"

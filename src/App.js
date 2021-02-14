@@ -8,12 +8,15 @@ import {
 import {LoginMain} from "./Login/Login_main";
 import {ForgotPasswordMain} from "./Login/Login_forgot";
 import {Calendar} from "./Calendar/Calendar";
+import {C} from "./Calendar/C";
+
 import Overview from "./Appointment/isOn";
 
 function App() {
   return (
     <Router>
       <Switch>
+        <Route exact path="/" render={(p) => <C />} />
         <Route
           exact
           path="/company-login"

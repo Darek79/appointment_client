@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, {useEffect, useRef, useState} from "react";
 import isMobile from "./../helpers/helpers";
 // import useWindowsWidth from "./../helpers/helpers";

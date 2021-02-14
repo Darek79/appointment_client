@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, {useEffect, useState, memo} from "react";
 import {startEndTime} from "./../utils/helperFn";
 import {v1} from "uuid";

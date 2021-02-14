@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, {useState, useEffect} from "react";
 import {sendData} from "./../utils/axios";
 import {useHistory, NavLink} from "react-router-dom";

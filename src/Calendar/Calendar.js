@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, {useState, useEffect, useRef} from "react";
 import Moment from "moment";
 import {v4} from "uuid";
@@ -81,10 +82,11 @@ export const Calendar = ({year}) => {
     <div className="calender_wrapper">
       {console.log(off, "off")}
       {console.log(week, "week")}
-      <h2>{moment().year()}</h2>
+      {/* <h2>{moment().year()}</h2>
       <h2>{moment().format("E")}</h2>
       <h2>{moment().format("D")}</h2>
-      <h2>{moment().add(off, "d").format("MMMM")}</h2>
+      <h2>{moment().add(off, "d").format("MMMM")}</h2> */}
+      <h2>{moment().get("date", "D")}</h2>
       <section className="calender_month">
         <h2>
           {moment()
