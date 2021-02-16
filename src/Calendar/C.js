@@ -5,11 +5,13 @@ import {isMobile} from "./../utils/helperFn";
 import {v4} from "uuid";
 import {LeftA} from "../svg/leftA";
 import {RightA} from "../svg/rightA";
+import {sendData} from "./../utils/axios";
 import "./c.scss";
 
 const week = [0, 0, 0, 0];
 export const C = () => {
   const [days, setDays] = useState([]);
+  const [template, setTemplate] = useState([]);
   useEffect(() => {
     setDays(() =>
       week.map((el, i) => {
