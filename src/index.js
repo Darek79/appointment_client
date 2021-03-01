@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import "./styles/styles.scss";
 import App from "./App";
 import "./App.scss";
+import {Week} from "./TEST_COMP/test";
 
 import reportWebVitals from "./reportWebVitals";
 

@@ -2,6 +2,7 @@
 import React, {useEffect, useState, memo} from "react";
 import {startEndTime} from "./../utils/helperFn";
 import {v1} from "uuid";
+import moment from "moment";
 import ActivateDay from "./AppointmentDay";
 import {CloseCircle} from "./../svg/close_circel";
 
@@ -13,7 +14,13 @@ export default memo(({dayToCheck, toSave}) => {
     let offsetTime = [];
     let day = JSON.parse(localStorage.getItem(dayToCheck));
     if (day === null) {
-      setM(() => [{active: false, reason: "skipped"}]);
+      setM(() => [
+        {
+          active: false,
+          reason: "skipped",
+          day: moment().day(dayToCheck).day(),
+        },
+      ]);
       return;
     }
     let time = startEndTime(
@@ -31,7 +38,7 @@ export default memo(({dayToCheck, toSave}) => {
         false
       );
     }
-
+    console.log(moment().day(dayToCheck).day());
     console.log(offsetTime, "offset");
     console.log(time, "TIME");
     setM(() => [...offsetTime, ...time]);
@@ -41,7 +48,7 @@ export default memo(({dayToCheck, toSave}) => {
     if (toSave) {
       localStorage.setItem(
         dayToCheck + "1",
-        JSON.stringify(dayM)
+        JSON.stringify(...dayM)
       );
     }
   }, [toSave]);
@@ -123,7 +130,9 @@ export default memo(({dayToCheck, toSave}) => {
                   ? "time_skipped"
                   : ""
               }`}>
-              {el.time ? el.time : el.reason.toUpperCase()}
+              {el.time
+                ? el.time.join(":")
+                : el.reason.toUpperCase()}
               {el.reason === "skipped" ? (
                 <div className="day_change">activate</div>
               ) : undefined}

@@ -83,7 +83,12 @@ export default memo(({day}) => {
     onSend(() => true);
   };
   const onSkipDay = () => {
-    localStorage.setItem(day, "null");
+    console.log("NULL");
+    localStorage.setItem(day, {
+      active: false,
+      reason: "skipped",
+      day: moment().day(day).day(),
+    });
     onSend(() => true);
   };
   const onResetDay = () => {

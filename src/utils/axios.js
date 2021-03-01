@@ -12,10 +12,9 @@ export const sendData = async (
       url: `https://dkdev.tech/${url}`,
       headers: {"Content-Type": "application/json"},
       data: JSON.stringify(payload),
-      withCredentials: true,
     });
     console.log(res);
-    fnSet(() => res.data.msg);
+    fnSet(() => res.data);
   } catch (e) {
     console.log(e.response.data.message);
     fnSet(() => e.response.data.message);
