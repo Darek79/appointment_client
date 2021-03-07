@@ -9,14 +9,20 @@ import {LoginMain} from "./Login/Login_main";
 import {ForgotPasswordMain} from "./Login/Login_forgot";
 import {Calendar} from "./Calendar/Calendar";
 import {C} from "./Calendar/C";
-
+import {Buttons} from "./Homepage/ButtonGroup";
+import {Sidebar} from "./Homepage/Hamburger_Sidebar";
+import {Card} from "./Homepage/Card";
 import Overview from "./Appointment/isOn";
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" render={(p) => <C />} />
+        <Route
+          exact
+          path="/"
+          render={(p) => <Card />}
+        />
         <Route
           exact
           path="/company-login"
@@ -37,7 +43,10 @@ function App() {
           path="/calendar-company"
           render={(p) => <Calendar {...p} />}
         />
-        <Route path="*" render={() => <div>ERROR</div>} />
+        <Route
+          path="*"
+          render={() => <div>ERROR</div>}
+        />
       </Switch>
     </Router>
   );

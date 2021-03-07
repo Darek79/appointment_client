@@ -1,17 +1,29 @@
 /* eslint-disable */
 import React from "react";
 import ReactDOM from "react-dom";
-import "./styles/styles.scss";
+
 import App from "./App";
+import {Provider} from "react-redux";
+import {PersistGate} from "redux-persist/integration/react";
+import {
+  store,
+  persistor,
+} from "./Redux/root_reducer";
 import "./App.scss";
-import {Week} from "./TEST_COMP/test";
+import "./styles/styles.scss";
 
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <PersistGate
+      loading={null}
+      persistor={persistor}>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </PersistGate>
+  </Provider>,
   document.getElementById("root")
 );
 
