@@ -9,9 +9,10 @@ import {LoginMain} from "./Login/Login_main";
 import {ForgotPasswordMain} from "./Login/Login_forgot";
 import {Calendar} from "./Calendar/Calendar";
 import {C} from "./Calendar/C";
-import {Buttons} from "./Homepage/ButtonGroup";
+import {Buttons} from "./Homepage/HeaderSub/ButtonGroupNav";
 import {Sidebar} from "./Homepage/Hamburger_Sidebar";
-import {Card} from "./Homepage/Card";
+import {Card2} from "./Homepage/Card2";
+import {Header} from "./Homepage/Header";
 import Overview from "./Appointment/isOn";
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
         <Route
           exact
           path="/"
-          render={(p) => <Card />}
+          render={(p) => <Header />}
         />
         <Route
           exact
