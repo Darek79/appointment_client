@@ -1,0 +1,207 @@
+.login_main {
+  display: grid;
+  grid-template-columns: 50vw auto;
+  .login_logo_main {
+    grid-column: 1;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    .logo_img {
+      padding: 5px;
+      width: 500px;
+      height: auto;
+      margin-right: 30px;
+    }
+  }
+  .login_module {
+    grid-column: 2;
+    // height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    .error_wrapper {
+      display: inline;
+      position: relative;
+      top: -10px;
+      font-size: 20px;
+      width: 50%;
+      margin-left: 30px;
+      color: #993833;
+      text-align: center;
+      display: flex;
+      height: 25px;
+      .error_msg {
+        margin: auto;
+      }
+    }
+    .b {
+      border: 2px solid #993833;
+    }
+    .login_input_wrapper {
+      margin-left: 30px;
+
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+
+      .login_msg_txt {
+        position: relative;
+        top: -10px;
+        font-size: 20px;
+        // color: #6c757d;
+        color: #6c757d;
+      }
+      .input_field {
+        font-size: 20px;
+        border: 2px solid #02c39a !important;
+        padding: 5px;
+        border: none;
+      }
+      .input_field:focus-visible {
+        border: 2px solid #01654f !important;
+        // background-color: yellow !important;
+        outline: #01654f !important;
+      }
+      .input_field:nth-child(-n + 2) {
+        margin-bottom: 15px;
+      }
+    }
+    .login_submit {
+      width: 50%;
+      margin-left: 30px;
+      .login_submit_btn {
+        background-color: #02c39a;
+        font-size: 20px;
+        font-weight: bold;
+        width: 100%;
+        padding: 5px;
+        border: 2px solid transparent;
+        color: #01654f;
+        transition: all 500ms ease-in;
+        box-shadow: 0px 0px 14px 4px rgba(2, 195, 154, 0.5);
+      }
+      .login_submit_btn:hover {
+        cursor: pointer;
+        background-color: #028090;
+        transition: all 500ms ease-out;
+        color: white;
+      }
+      .login_submit_btn:focus {
+        border: 2px solid #3e1f47;
+        outline: #3e1f47;
+        transition: all 500ms ease-out;
+      }
+    }
+    .login_forgot {
+      position: relative;
+      top: 10px;
+      font-size: 15px;
+      color: #6c757d;
+      margin-left: 30px;
+    }
+  }
+}
+.logo_main_m {
+  display: grid;
+  grid-template-rows: 30vh 30vh auto;
+  .login_logo_main {
+    grid-row: 1;
+    max-height: 100%;
+    width: 100%;
+
+    position: relative;
+    .logo_img {
+      position: absolute;
+      bottom: 30px;
+      padding: 0 5px;
+      width: 100%;
+      max-height: 100%;
+    }
+  }
+  .login_module {
+    grid-row: 2;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .error_wrapper {
+      display: inline;
+      position: relative;
+      top: -10px;
+      font-size: 16px;
+      width: 70%;
+
+      color: #993833;
+      text-align: center;
+      display: flex;
+      height: 20px;
+      .error_msg {
+        margin: auto;
+      }
+    }
+    .b {
+      border: 1px solid #993833;
+    }
+    .login_input_wrapper {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+
+      .login_msg_txt {
+        position: relative;
+        top: -25px;
+        font-size: 16px;
+        color: #6c757d;
+      }
+      .input_field {
+        font-size: 22px;
+        border: 2px solid #02c39a !important;
+        padding: 5px;
+        border: none;
+      }
+      .input_field:focus-visible {
+        border: 2px solid #01654f !important;
+        // background-color: yellow !important;
+        outline: #01654f !important;
+      }
+      .input_field:nth-child(-n + 2) {
+        margin-bottom: 30px;
+      }
+    }
+    .login_submit {
+      width: 70%;
+
+      .login_submit_btn {
+        background-color: #02c39a;
+        font-size: 22px;
+        font-weight: bold;
+        width: 100%;
+        padding: 5px;
+        border: none;
+        color: white;
+        box-shadow: 0px 0px 14px 4px rgba(2, 195, 154, 0.5);
+      }
+      .login_submit_btn:focus {
+        border: 2px solid #3e1f47;
+        outline: #3e1f47;
+        transition: all 500ms ease-out;
+      }
+    }
+    .login_forgot {
+      position: relative;
+      top: 25px;
+      font-size: 16px;
+      color: #6c757d;
+    }
+  }
+}

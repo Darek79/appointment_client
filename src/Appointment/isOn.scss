@@ -1,0 +1,93 @@
+
+.day_main_save {
+  display: grid;
+  grid-template-columns: 80vw auto;
+  height: 100vh;
+  .day_wrapper_save {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    grid-column: 1;
+    .overview_cont {
+      text-align: center;
+      .time_tile {
+        width: 180px;
+        padding: 5px 0px;
+        border: 1px solid black;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      .time_tile_day {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      .time_tile:hover {
+        cursor: pointer;
+      }
+      .time_skip {
+        padding: 5px 0px;
+        color: white;
+        background-color: orange;
+      }
+      .time_skip:hover {
+        transition: all 150ms ease-in;
+        cursor: pointer;
+        background-color: red;
+      }
+      .time_off {
+        background-color: darkgrey;
+        color: grey;
+      }
+      .time_skipped {
+        height: 50vh;
+        background-color: darkgrey;
+        color: grey;
+      }
+      .day_change {
+        color: white !important;
+        background-color: green;
+        border: 2px solid black;
+        width: 80%;
+        height: 30px;
+        padding: 3px;
+        margin: auto;
+      }
+      .activate_day {
+        position: absolute;
+        top: 20vh;
+        left: 20vw;
+        background-color: lightgreen;
+
+        .closex_wrapper {
+          position: relative;
+          left: 93%;
+          top: 10px;
+          width: 30px;
+          height: 30px;
+        }
+        .closex_wrapper:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    .overview_cont:nth-child(-n + 6) {
+      margin-right: 10px;
+    }
+  }
+  .day_submit_save {
+    grid-column: 2;
+  }
+  .day_submit_btn {
+    text-align: center;
+    margin-top: 40px;
+    padding: 5px 0px;
+    width: 60%;
+    color: white;
+    background-color: green;
+  }
+  .day_submit_btn:hover {
+    cursor: pointer;
+  }
+}

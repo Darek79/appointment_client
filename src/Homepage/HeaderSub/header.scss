@@ -1,0 +1,208 @@
+.card_grid {
+  display: grid;
+  grid-template-rows: 100px 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000c14;
+  // position: relative;
+  perspective: 1px;
+
+  .title_btn_contact {
+    grid-column: 1/2;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+
+    .title_icons {
+      display: flex;
+      padding: 5px 20px;
+      color: #f8f9fa;
+      .title_phone,
+      .title_email {
+        margin-top: 3px;
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+  .title_btn_group {
+    grid-column: 3/5;
+    grid-row: 1;
+    width: auto;
+    justify-self: center;
+    align-self: center;
+    // height: 30px;
+    display: flex;
+    justify-content: center;
+
+    .title_links {
+      background-color: #000c14;
+      color: #f8f9fa;
+      font-family: Roboto;
+      padding: 5px 20px;
+      animation-name: links_fade;
+      animation-duration: 1s;
+    }
+    .title_links:hover {
+      color: #000c14;
+      background-color: #f8f9fa;
+    }
+    .title_links:nth-child(1) {
+      border-radius: 5px 0 0 5px;
+    }
+    .title_links:last-child {
+      border-radius: 0 5px 5px 0;
+    }
+  }
+  .title_text {
+    grid-column: 1/5;
+    grid-row: 2/4;
+    color: #f8f9fa;;
+    font-size: 280px;
+    font-family: Chonburi;
+    position: absolute;
+    top: -50px;
+    // background-position: center top;
+    // background-attachment: fixed;
+    justify-self: center;
+    align-self: start;
+    animation-name: fade_text;
+    animation-duration: 2s;
+  }
+  .title_img {
+    // border: 1px solid yellow;
+    background-image: url("./../../assets/woman_red_hair.png");
+    grid-row: 2/6;
+    grid-column: 2/4;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    // background-attachment: fixed;
+    background-size: 65% auto;
+    z-index: 3;
+
+    animation-name: fade;
+    animation-duration: 1.2s;
+  }
+
+  .title_text_l {
+    border: 4px solid #f8f9fa;;
+    grid-row: 4;
+    grid-column: 2;
+    width: 80%;
+    justify-self: start;
+    animation: div_text_l;
+    animation-duration: 700ms;
+  }
+  .title_text_r {
+    border: 4px solid #f8f9fa;;
+    grid-row: 3;
+    grid-column: 3;
+    z-index: 5;
+    width: 80%;
+    justify-self: end;
+    animation: div_text_r;
+    animation-duration: 700ms;
+  }
+  // .title_img:hover {
+  //   transform: translatex(100px);
+  //   transition: all 350ms ease;
+  // }
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+      background-position: right bottom;
+      transform: scale(1.2);
+    }
+    100% {
+      opacity: 1;
+      background-position: center bottom;
+    }
+  }
+  @keyframes fade_text {
+    0% {
+      opacity: 0;
+      transform: translatex(600px);
+    }
+    50% {
+      opacity: 0.5;
+      transform: translatex(-100px);
+    }
+    100% {
+      opacity: 1;
+      justify-self: center;
+    }
+  }
+  @keyframes div_text_l {
+    0% {
+      opacity: 0;
+      transform: translatex(-50px);
+      z-index: -1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes div_text_r {
+    0% {
+      opacity: 0;
+      transform: translatex(50px);
+    }
+    50% {
+      transform: translatex(-10px);
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes links_fade {
+    0% {
+      opacity: 0;
+      transform: translatex(50px);
+    }
+    50% {
+      transform: translatex(-20px);
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+// .parallax {
+//   perspective: 1px;
+//   height: 100vh;
+//   overflow-x: hidden;
+//   overflow-y: auto;
+//   perspective-origin-x: 100%;
+//   border: 5px solid red;
+// }
+// .parallax__group {
+//   position: relative;
+//   height: 100vh;
+//   transform-style: preserve-3d;
+// }
+// .parallax__layer {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+//   padding: 80vh;
+//   transform-origin-x: 100%;
+// }
+// .parallax__layer--base {
+//   transform: translateZ(0);
+//   // background-color: darkcyan;
+//   height: 50vh;
+//   border: 1px solid blue;
+// }
+// .parallax__layer--back {
+//   transform: translateZ(-1px) scale(1.5);
+//   height: 10%; /* Now the background is only 50% height */
+//   transform-origin: center 100%;
+//   border: 5px solid black;
+// }
