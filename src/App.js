@@ -8,7 +8,7 @@ import {
 import {LoginMain} from "./Login/Login_main";
 import {ForgotPasswordMain} from "./Login/Login_forgot";
 import {Calendar} from "./Calendar/Calendar";
-import {Content1} from "./Homepage/Content1/ContentMain";
+import Gallery from "./Homepage/Gallery/GalleryMain";
 import {HomepageMain} from "./Homepage/HomepageMain";
 import Overview from "./Appointment/isOn";
 
@@ -19,7 +19,7 @@ function App() {
         <Route
           exact
           path="/"
-          render={(p) => <HomepageMain />}
+          render={(p) => <Gallery />}
         />
         <Route
           exact

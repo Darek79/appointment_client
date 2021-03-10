@@ -11,7 +11,7 @@ import autoMergeLevel2 from "redux-persist/lib/stateReconciler/autoMergeLevel2";
 import storage from "redux-persist/lib/storage";
 import thunkMiddleware from "redux-thunk";
 import {createLogger} from "redux-logger";
-
+import {gallery} from "./reducer/gallery";
 const loggerMiddleware = createLogger();
 
 const persistConfig = {
@@ -20,7 +20,7 @@ const persistConfig = {
   stateReconciler: autoMergeLevel2,
 };
 
-const rootReducer = combineReducers({});
+const rootReducer = combineReducers({gallery});
 const persistedReducer = persistReducer(
   persistConfig,
   rootReducer
