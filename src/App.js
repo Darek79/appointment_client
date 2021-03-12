@@ -9,6 +9,8 @@ import {LoginMain} from "./Login/Login_main";
 import {ForgotPasswordMain} from "./Login/Login_forgot";
 import {Calendar} from "./Calendar/Calendar";
 import Gallery from "./Homepage/Gallery/GalleryMain";
+import Team from "./Homepage/Team/TeamMain";
+import {Price} from "./Homepage/Price/Price";
 import {HomepageMain} from "./Homepage/HomepageMain";
 import Overview from "./Appointment/isOn";
 
@@ -19,7 +21,7 @@ function App() {
         <Route
           exact
           path="/"
-          render={(p) => <Gallery />}
+          render={(p) => <Price />}
         />
         <Route
           exact

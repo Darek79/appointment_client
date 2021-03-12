@@ -22,7 +22,7 @@ export const Content1 = () => {
           cl_desc="content_desc"
           cl_desc_txt="content_desc_txt"
           desc_txt={txt[i]}
-          path="/"
+          path="/test"
           ind={i}
           img={el}
         />

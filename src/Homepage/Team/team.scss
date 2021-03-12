@@ -1,0 +1,137 @@
+.team {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 100px 1fr;
+  background-image: url("./../../assets/teamback.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .team_title {
+    grid-column: 2;
+    grid-row: 1;
+    position: relative;
+    align-self: end;
+    justify-self: center;
+    font-family: Chonburi;
+    color: #f8f9fa;
+    font-size: 70px;
+  }
+  .card_wrapper {
+    height: 50%;
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+    top: -100px;
+    grid-row: 2;
+
+    .card_img {
+      height: 100%;
+      width: 100%;
+      // background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      // background-size: cover;
+
+      transition: all 500ms;
+    }
+    .card_img:hover {
+      transition: all 500ms;
+      transition-timing-function: cubic-bezier(
+        0.76,
+        0.21,
+        0.67,
+        0.71
+      );
+    }
+    .card_desc {
+      width: 100%;
+      height: 100%;
+      background-color: #333333;
+      position: absolute;
+      bottom: 0;
+      transform: translateY(90%);
+      transition: all 500ms;
+      transition-timing-function: cubic-bezier(
+        0.76,
+        0.21,
+        0.67,
+        0.71
+      );
+    }
+    .card_desc {
+      width: 100%;
+      color: #f8f9fa;
+      font-size: 25px;
+      display: flex;
+      overflow: hidden;
+      justify-content: center;
+      // align-items: flex-end;
+      .card_txt {
+        position: relative;
+        top: 80%;
+      }
+    }
+  }
+  .align0 {
+    justify-self: end;
+    align-self: center;
+    transition: all 500ms;
+    transition-timing-function: cubic-bezier(
+      0.76,
+      0.21,
+      0.67,
+      0.71
+    );
+    // position: relative;
+    // top: -200px;
+  }
+  .align0:hover .card_desc {
+    background-color: rgba(0, 0, 0, 0.4);
+    transform: translateY(0);
+    transition: all 500ms;
+    transition-timing-function: cubic-bezier(
+      0.76,
+      0.21,
+      0.67,
+      0.71
+    );
+  }
+
+  .align1 {
+    justify-self: center;
+    align-self: center;
+    // position: relative;
+    // top: -200px;
+  }
+
+  .align1:hover .card_desc {
+    background-color: rgba(0, 0, 0, 0.4);
+    transform: translateY(0);
+    transition: all 500ms;
+    transition-timing-function: cubic-bezier(
+      0.76,
+      0.21,
+      0.67,
+      0.71
+    );
+  }
+  .align2 {
+    align-self: center;
+    // position: relative;
+    // top: -200px;
+  }
+  .align2:hover .card_desc {
+    background-color: rgba(0, 0, 0, 0.4);
+    transform: translateY(0);
+    transition: all 500ms;
+    transition-timing-function: cubic-bezier(
+      0.76,
+      0.21,
+      0.67,
+      0.71
+    );
+  }
+}

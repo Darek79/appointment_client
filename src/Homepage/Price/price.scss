@@ -1,0 +1,11 @@
+.prices {
+  .price_head {
+    background-color: black;
+    color: white;
+    text-align: center;
+
+    & > tr {
+      background-color: black;
+    }
+  }
+}
