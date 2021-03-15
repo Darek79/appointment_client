@@ -25,12 +25,13 @@ export const IsInViewportHook = (
   };
 
   const cb = useCallback(() => {
-    const res = isInViewport(500, el.current);
+    const res = isInViewport(offset, el.current);
     if (
       (side === "bottom" ? res.bottom : res.top) <
         0 &&
       galleryRef.current === 0
     ) {
+      console.log("loading...");
       console.log("fire", galleryRef.current);
       setVisible(true);
       galleryRef.current = 1;

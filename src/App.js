@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Suspense, lazy} from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,19 +10,25 @@ import {ForgotPasswordMain} from "./Login/Login_forgot";
 import {Calendar} from "./Calendar/Calendar";
 import Gallery from "./Homepage/Gallery/GalleryMain";
 import Team from "./Homepage/Team/TeamMain";
-import {Price} from "./Homepage/Price/Price";
-import {HomepageMain} from "./Homepage/HomepageMain";
+import {Div} from "./Homepage/Price/Price";
+// import {HomepageMain} from "./Homepage/HomepageMain";
 import Overview from "./Appointment/isOn";
+const HomepageMain = lazy(() =>
+  import("./Homepage/HomepageMain")
+);
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route
-          exact
-          path="/"
-          render={(p) => <Price />}
-        />
+        <Suspense
+          fallback={<div>loading...</div>}>
+          <Route
+            exact
+            path="/"
+            render={(p) => <HomepageMain />}
+          />
+        </Suspense>
         <Route
           exact
           path="/company-login"

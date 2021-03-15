@@ -68,7 +68,7 @@ const Gallery = ({
   const img_gallery = useRef(null);
 
   const visible = IsInViewportHook(
-    100,
+    1000,
     img_gallery
   );
   // useEffect(() => {
@@ -77,26 +77,35 @@ const Gallery = ({
   //   }
   // }, []);
 
+  useEffect(() => {
+    if (visible) {
+      console.log("loading...");
+    }
+  }, []);
+
   return (
     <Fragment>
-      <section
-        className={`gallery ${
-          visible ? "gallery_visible" : ""
-        }`}
-        ref={img_gallery}>
-        {images.map((el, i) => (
-          <div
-            className={`gallery_img `}
-            key={el + i}>
-            <div
-              className={`gallery_inner_img`}
-              style={{
-                backgroundImage: `url(${el})`,
-              }}
-            />
-          </div>
-        ))}
-      </section>
+      <span ref={img_gallery}>
+        {visible ? (
+          <section
+            className={`gallery ${
+              visible ? "gallery_visible" : ""
+            }`}>
+            {images.map((el, i) => (
+              <div
+                className={`gallery_img `}
+                key={el + i}>
+                <div
+                  className={`gallery_inner_img`}
+                  style={{
+                    backgroundImage: `url(${el})`,
+                  }}
+                />
+              </div>
+            ))}
+          </section>
+        ) : undefined}
+      </span>
     </Fragment>
   );
 };
