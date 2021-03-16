@@ -11,9 +11,10 @@ const txt = [
   "CHOOSE YOUR FAVORITE COLOR",
   "OUR COLORIST JACK",
 ];
-export const Content1 = () => {
+const Content1 = () => {
   return (
     <section className="content1">
+      <div className="content1_wall"></div>
       {img_arr.map((el, i) => (
         <AvatarCard
           key={el}
@@ -48,3 +49,4 @@ Selfies cornhole pop-up, flexitarian hella vinyl cardigan keytar synth Pitchfork
     </section>
   );
 };
+export default Content1;

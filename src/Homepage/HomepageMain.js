@@ -1,7 +1,7 @@
 import React, {Fragment, Suspense} from "react";
-import {Header} from "./HeaderSub/HeaderMain";
-
-import {Content1} from "./Content1/ContentMain";
+import Header from "./HeaderSub/HeaderMain";
+import Price from "./Price/Price";
+import Content1 from "./Content1/ContentMain";
 import Gallery from "./Gallery/GalleryMain";
 import Team from "./Team/TeamMain";
 // const Content1 = lazy(() =>
@@ -24,10 +24,7 @@ const HomepageMain = () => {
     <Fragment>
       <Header />
       <Content1 />
-      {/* <Suspense
-        fallback={() => <div>Loading...</div>}>
-        <Gallery />
-      </Suspense> */}
+      <Price />
       <Gallery />
       <Team />
       <div style={{height: "100vh"}}></div>

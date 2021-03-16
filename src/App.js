@@ -10,9 +10,10 @@ import {ForgotPasswordMain} from "./Login/Login_forgot";
 import {Calendar} from "./Calendar/Calendar";
 import Gallery from "./Homepage/Gallery/GalleryMain";
 import Team from "./Homepage/Team/TeamMain";
-import {Div} from "./Homepage/Price/Price";
+import Price from "./Homepage/Price/Price";
 // import {HomepageMain} from "./Homepage/HomepageMain";
 import Overview from "./Appointment/isOn";
+import Footer from "./Homepage/Footer/Footer";
 const HomepageMain = lazy(() =>
   import("./Homepage/HomepageMain")
 );
@@ -26,7 +27,7 @@ function App() {
           <Route
             exact
             path="/"
-            render={(p) => <HomepageMain />}
+            render={(p) => <Footer />}
           />
         </Suspense>
         <Route

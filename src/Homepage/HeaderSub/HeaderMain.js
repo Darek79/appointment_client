@@ -15,7 +15,7 @@ const links = [
   "ABOUT",
 ];
 
-export const Header = () => {
+const Header = () => {
   return (
     <section className={`card_grid`}>
       <div className="title_btn_contact">
@@ -31,3 +31,5 @@ export const Header = () => {
     </section>
   );
 };
+
+export default Header;
