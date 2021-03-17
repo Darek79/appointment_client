@@ -7,7 +7,17 @@ import {Facebook} from "./../../assets/Facebook";
 import paypal from "./../../assets/paypal.png";
 import visa from "./../../assets/visa.png";
 import mastercard from "./../../assets/mastercard.png";
-const social = [<Instagram />, <Facebook />];
+const social = [
+  <Instagram
+    clName="logo_social"
+    fillpath2="#f8f9fa"
+  />,
+  <Facebook
+    clName="logo_social"
+    fillpath2="#f8f9fa"
+    fillpath1="transparent"
+  />,
+];
 const payment = [
   {link: paypal},
   {link: visa},
@@ -16,12 +26,14 @@ const payment = [
 const Footer = () => (
   <section className="footer">
     {console.log(payment)}
+    <div className="footer_main_logo"></div>
     <Footer_items
       clName="footer_items footer_logos"
       clFooterTitle="footer_logo_title"
       clFooterContent="footer_logo_content"
       clFooterLink="footer_link"
       clFooterImg="footer_img"
+      title="Find us here"
       content={social}
     />
     <Footer_items
@@ -31,6 +43,7 @@ const Footer = () => (
       clFooterContent="footer_payment_content"
       clFooterLink="footer_link"
       clFooterImg="footer_img"
+      title="We accept"
     />
   </section>
 );
