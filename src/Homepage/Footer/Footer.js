@@ -25,8 +25,9 @@ const payment = [
 ];
 const Footer = () => (
   <section className="footer">
-    {console.log(payment)}
-    <div className="footer_main_logo"></div>
+    <div className="footer_main_logo">
+      COIFFEUR
+    </div>
     <Footer_items
       clName="footer_items footer_logos"
       clFooterTitle="footer_logo_title"

@@ -27,7 +27,7 @@ function App() {
           <Route
             exact
             path="/"
-            render={(p) => <Footer />}
+            render={(p) => <HomepageMain />}
           />
         </Suspense>
         <Route
