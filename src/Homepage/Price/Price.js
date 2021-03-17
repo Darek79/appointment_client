@@ -1,4 +1,6 @@
 import React, {Fragment} from "react";
+import {v4} from "uuid";
+
 import "./price.scss";
 
 import {hairPrices} from "./pricesList";
@@ -23,7 +25,9 @@ const PriceMain = () => (
         <p>CUT MENU</p>
       </div>
       {hairPrices.map((el) => (
-        <div className="prices_cut_item item_price">
+        <div
+          key={v4()}
+          className="prices_cut_item item_price">
           <p>{el.title}</p>
           <p>{el.price}</p>
         </div>
