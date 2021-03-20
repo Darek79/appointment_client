@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React from "react";
 import "./content1.scss";
 import {AvatarCard} from "./AvatarCard";
 import {TextCont} from "./TextCont";

@@ -13,6 +13,7 @@ import thunkMiddleware from "redux-thunk";
 import {createLogger} from "redux-logger";
 import {gallery} from "./reducer/gallery";
 import {user} from "./reducer/user";
+import appointmentreducer from "./reducer/appointmentbooking";
 const loggerMiddleware = createLogger();
 
 const persistConfig = {
@@ -24,6 +25,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   gallery,
   user,
+  appointmentreducer,
 });
 const persistedReducer = persistReducer(
   persistConfig,

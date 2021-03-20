@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React from "react";
 import {v4} from "uuid";
 
 import "./price.scss";

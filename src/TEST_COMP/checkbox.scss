@@ -1,0 +1,43 @@
+.form {
+  margin: 150px;
+  width: 150px;
+  height: 50px;
+  .label {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    .span {
+      background-color: black;
+      border: 3px solid black;
+      width: 40px;
+      height: 40px;
+      display: inline-block;
+      border-radius: 10%;
+      transition: all 500ms ease;
+      background: url("./../assets/White_check.svg")
+        center/1000% no-repeat;
+    }
+    .input:checked + .span {
+      background-color: black;
+      border: 3px solid black;
+      transition: all 500ms ease;
+      background-size: 80%;
+    }
+    .input {
+      position: absolute;
+      -webkit-appearance: none;
+      width: 40px;
+      height: 40px;
+      outline: none;
+    }
+  }
+  .label::after {
+    content: "test";
+    font-size: 25px;
+    position: relative;
+    top: -25%;
+    left: 10%;
+  }
+
+ 
+}

@@ -1,4 +1,12 @@
 import axios from "axios";
+// export const FETCH_OK = "FETCH_OK";
+// export const FETCH_ERROR = "FETCH_ERROR";
+// export const FETCH_ERROR_USER =
+//   "FETCH_ERROR_USER";
+// export const FETCH_OK_USER = "FETCH_OK_USER";
+// export const FETCH_ERROR_USER =
+//   "FETCH_ERROR_USER";
+
 export const fetched_data = (data = []) => {
   return {
     type: "FETCH_OK",

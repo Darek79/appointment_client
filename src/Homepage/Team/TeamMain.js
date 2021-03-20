@@ -1,8 +1,4 @@
-import React, {
-  useEffect,
-  Fragment,
-  useRef,
-} from "react";
+import React, {useEffect, useRef} from "react";
 import {connect} from "react-redux";
 import {Card} from "./../../components/Card";
 import {
@@ -32,7 +28,12 @@ const Team = ({
         "results"
       );
     }
-  }, []);
+  }, [
+    fetched_data_user,
+    fetched_error_user,
+    fetch_data,
+    user.length,
+  ]);
   return (
     <section className="team" ref={compRef}>
       <p className="team_title">Meet our Team</p>

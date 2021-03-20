@@ -1,9 +1,5 @@
-import React, {
-  useState,
-  useEffect,
-  Fragment,
-} from "react";
-import isMobile from "../../helpers/helpers";
+import React, {Fragment} from "react";
+//import isMobile from "../../helpers/helpers";
 import {Link} from "react-router-dom";
 import {v4} from "uuid";
 

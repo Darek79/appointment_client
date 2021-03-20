@@ -1,10 +1,10 @@
-import React, {Fragment, Suspense} from "react";
+import React, {Fragment} from "react";
 import Header from "./HeaderSub/HeaderMain";
 import Price from "./Price/Price";
 import Content1 from "./Content1/ContentMain";
 import Gallery from "./Gallery/GalleryMain";
 import Team from "./Team/TeamMain";
-import Footer from "./Footer/Footer";
+//import Footer from "./Footer/Footer";
 // const Content1 = lazy(() =>
 //   import("./Content1/ContentMain")
 // );
@@ -28,7 +28,7 @@ const HomepageMain = () => {
       <Price />
       <Gallery />
       <Team />
-      <Footer />
+      {/* <Footer /> */}
     </Fragment>
   );
 };

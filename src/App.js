@@ -8,28 +8,36 @@ import {
 import {LoginMain} from "./Login/Login_main";
 import {ForgotPasswordMain} from "./Login/Login_forgot";
 import {Calendar} from "./Calendar/Calendar";
-import Gallery from "./Homepage/Gallery/GalleryMain";
-import Team from "./Homepage/Team/TeamMain";
-import Price from "./Homepage/Price/Price";
-// import {HomepageMain} from "./Homepage/HomepageMain";
+// import Gallery from "./Homepage/Gallery/GalleryMain";
+// import Team from "./Homepage/Team/TeamMain";
+// import Price from "./Homepage/Price/Price";
+import HomepageMain from "./Homepage/HomepageMain";
 import Overview from "./Appointment/isOn";
-import Footer from "./Homepage/Footer/Footer";
-const HomepageMain = lazy(() =>
-  import("./Homepage/HomepageMain")
-);
+import UserMain from "./Appointment/UserWindow/UserMain";
+// import Footer from "./Homepage/Footer/Footer";
+// import {Form} from "./TEST_COMP/checkbox";
+// import {Input} from "./TEST_COMP/input";
+// const HomepageMain = lazy(() =>
+//   import("./Homepage/HomepageMain")
+// );
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Suspense
+        {/* <Suspense
           fallback={<div>loading...</div>}>
           <Route
             exact
             path="/"
             render={(p) => <HomepageMain />}
           />
-        </Suspense>
+        </Suspense> */}
+        <Route
+          exact
+          path="/"
+          render={(p) => <HomepageMain />}
+        />
         <Route
           exact
           path="/company-login"
@@ -49,6 +57,11 @@ function App() {
           exact
           path="/calendar-company"
           render={(p) => <Calendar {...p} />}
+        />
+        <Route
+          exact
+          path="/book-appointment"
+          render={(p) => <UserMain {...p} />}
         />
         <Route
           path="*"
