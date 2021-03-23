@@ -38,9 +38,9 @@ export default memo(({dayToCheck, toSave}) => {
         false
       );
     }
-    console.log(moment().day(dayToCheck).day());
-    console.log(offsetTime, "offset");
-    console.log(time, "TIME");
+    //console.log(moment().day(dayToCheck).day());
+    //console.log(offsetTime, "offset");
+    //console.log(time, "TIME");
     setM(() => [...offsetTime, ...time]);
   }, [active, skip]);
 
@@ -60,7 +60,7 @@ export default memo(({dayToCheck, toSave}) => {
             i ===
             e.target.getAttribute("data-index") * 1
           ) {
-            console.log({...el});
+            //console.log({...el});
             return {...el, active: false};
           } else {
             return el;
@@ -78,7 +78,7 @@ export default memo(({dayToCheck, toSave}) => {
             i ===
             e.target.getAttribute("data-index") * 1
           ) {
-            console.log({...el});
+            //console.log({...el});
             return {...el, active: true};
           } else {
             return el;
@@ -88,9 +88,9 @@ export default memo(({dayToCheck, toSave}) => {
     }
   };
   const clickTile = (el, e) => {
-    console.log(e.target);
+    //console.log(e.target);
     if (!el.active && el.reason === "skipped") {
-      console.log("skipped", dayToCheck);
+      //console.log("skipped", dayToCheck);
       setActive(() => true);
       return undefined;
     } else {

@@ -38,11 +38,7 @@ function App() {
           path="/"
           render={(p) => <HomepageMain />}
         />
-        <Route
-          exact
-          path="/company-login"
-          render={(p) => <LoginMain />}
-        />
+
         <Route
           exact
           path="/forgot-password"
@@ -57,6 +53,11 @@ function App() {
           exact
           path="/calendar-company"
           render={(p) => <Calendar {...p} />}
+        />
+        <Route
+          exact
+          path="/company-login"
+          render={(p) => <LoginMain />}
         />
         <Route
           exact

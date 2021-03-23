@@ -49,7 +49,6 @@ const Team = ({
             cl_desc_txt="card_txt"
           />
         ))}
-      {console.log(user[0].picture.medium)}
     </section>
   );
 };

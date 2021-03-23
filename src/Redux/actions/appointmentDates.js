@@ -23,9 +23,10 @@ export const appointmentweeks = (
   n = 0
 ) => {
   return async () => {
+    console.log("inside");
     try {
       const {data} = await axios.get(
-        `https://dkdev.tech/schedule/getdates/${storeId}/${n}`
+        `http://localhost:5000/schedule/getdates/${storeId}/${n}`
       );
       console.log(data, "weeks");
       fnOK(data);

@@ -18,8 +18,8 @@ function appointmentBooking(
       return {
         data:
           state.data.length === 0
-            ? action.week
-            : [state.data, action.week],
+            ? [action.week]
+            : [...state.data, action.week],
         status: true,
       };
     case GET_RESET:

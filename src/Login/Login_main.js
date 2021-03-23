@@ -3,7 +3,6 @@ import React, {
   useEffect,
   useRef,
   useState,
-  useContext,
 } from "react";
 
 import isMobile from "./../helpers/helpers";
@@ -28,29 +27,36 @@ export const LoginMain = () => {
   const history = useHistory();
 
   const [submit, setSubmit] = useState(false);
-  const [login, setLogin] = useState("");
+  const [login, setLogin] = useState({
+    status: false,
+    msg: "",
+  });
   const Login = () => {
-    //setSubmit((p) => !p); //<----- DEFAULT STATE
-    setLogin(() => "ok"); //<-----TEST STATE
+    setSubmit((p) => !p); //<----- DEFAULT STATE
+    // setLogin(() => "ok"); //<-----TEST STATE
     console.log(inputEmail.current.value);
     console.log(inputPassword.current.value);
   };
   const KeyLogin = (e) => {
     if (e.key === "Enter") {
-      //setSubmit((p) => !p); //<----- DEFAULT STATE
-      setLogin(() => "ok"); //<-----TEST STATE
+      setSubmit((p) => !p); //<----- DEFAULT STATE
+      // setLogin(() => "ok"); //<-----TEST STATE
     }
   };
   useEffect(() => {
     window.addEventListener("keydown", KeyLogin);
 
     return () =>
-      window.removeEventListener("keydown", KeyLogin);
-  }, []);
+      window.removeEventListener(
+        "keydown",
+        KeyLogin
+      );
+  }, [KeyLogin]);
 
   useEffect(() => {
-    let clear;
+    // let clear;
     if (submit) {
+      console.log("SUBMIT");
       sendData(
         "POST",
         `api/login`,
@@ -60,10 +66,11 @@ export const LoginMain = () => {
         },
         setLogin
       );
+      setSubmit((p) => !p);
       //call DB
       // clear = setTimeout(() => setSubmit(false), 500);
     }
-    return () => clearTimeout(clear);
+    // return () => clearTimeout(clear);
   }, [submit]);
   return (
     // <ErrorWrapper>
@@ -73,15 +80,19 @@ export const LoginMain = () => {
         !mobile ? "login_main" : "logo_main_m"
       }`}>
       <div className="login_logo_main">
-        <Image src={logo} alt="logo" clName="logo_img" />
+        <Image
+          src={logo}
+          alt="logo"
+          clName="logo_img"
+        />
       </div>
-      {console.log(login)}
+      {console.log(login, "LOGIN")}
       <div className="login_module">
-        {login ? (
+        {login.msg ? (
           <ErrorCom
             clName="error_wrapper b"
             clError="error_msg"
-            txt={login}
+            txt={login.msg}
           />
         ) : (
           <div className="error_wrapper"></div>
@@ -115,7 +126,7 @@ export const LoginMain = () => {
           FORGOT MY PASSWORD
         </NavLink>
       </div>
-      {login ? (
+      {login.status ? (
         <Redirect
           to={{
             pathname: "/calendar-create",

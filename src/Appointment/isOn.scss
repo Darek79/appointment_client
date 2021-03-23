@@ -1,8 +1,7 @@
-
 .day_main_save {
   display: grid;
   grid-template-columns: 80vw auto;
-  height: 100vh;
+  height: auto;
   .day_wrapper_save {
     display: flex;
     width: 100%;
@@ -59,6 +58,7 @@
         top: 20vh;
         left: 20vw;
         background-color: lightgreen;
+        overflow-x: hidden;
 
         .closex_wrapper {
           position: relative;
@@ -66,6 +66,7 @@
           top: 10px;
           width: 30px;
           height: 30px;
+          overflow: visible !important;
         }
         .closex_wrapper:hover {
           cursor: pointer;
